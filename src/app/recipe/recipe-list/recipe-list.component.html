@@ -1,0 +1,6 @@
+<div class="row">
+    <div class="">
+        <a class="btn btn-primary color-light text-center mb-3 mt-3 ms-3 " (click)="AddRecipe()"> Create</a>
+        <app-recipe-item *ngFor="let rec of recipes ; let i=index" [recipe]="rec" [index]="i"></app-recipe-item>
+    </div>
+</div>

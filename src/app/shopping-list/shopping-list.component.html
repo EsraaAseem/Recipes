@@ -1,0 +1,8 @@
+    
+    <app-shopping-edit ></app-shopping-edit>
+    <router-outlet></router-outlet>
+    <div class=" col-md-8  row mt-4 ms-3" *ngFor="let ingredient of ingredients ; let i=index">
+      <a  class="col-8 list-group-item"  (click)="onEdititem(i)"
+      style="border: 1px rgb(213, 212, 212) solid; border-radius:5px; padding: 10px 20px; cursor: pointer;">
+        {{ingredient.name}} | {{ingredient.amount}} </a>
+    </div>

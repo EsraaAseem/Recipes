@@ -1,0 +1,48 @@
+
+
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class=" ms-3">
+            <div class="row ">
+                <button class="col-md-3 btn btn-success mt-2 mb-2 me-2" type="submit" [disabled]="!recipeForm.valid">Save</button>
+                <button class="col-md-3 btn btn-danger mt-2 mb-2 ms-2" type="button" (click)="onCancel()">Cancel </button>
+            </div>
+            <div>
+                <div class=" ">
+                    <label for="name" class=" mb-2 ms-2" >Name</label>
+                    <input type="text"  id="name" class="ms-2 form-control" formControlName="name"   >
+                </div >
+                <div class=" text-start mb-3">
+                    <label for="imgurl" class=" mb-2 ms-2">Image</label>
+                    <input   id="imgurl" class=" ms-2 form-control"  formControlName="imgurl" #imag>
+                </div >
+                <div class="  text-center  mb-3">
+                    <img [src]="imag.value" alt="" width="100%" class="img-responsive" height="200px">
+                </div>
+                
+                <div class=" text-start col-12 mb-3">
+                    <textarea  id="description" cols="30"  rows="10" formControlName="description" ></textarea>
+                </div>
+            </div>
+            <div>
+                <div class="col-12" formArrayName="ingredients">
+                 <div class="row mt-3" *ngFor="let ingredientCtrl of controls ; let i=index;"  [formGroupName]="i">
+                    <div class="  col-md-5 mt-2 mb-2">
+                        <label for="name" >Name</label>
+                        <input type="text"  id="name" class="mt-2 form-control" formControlName="name" >
+                    </div >
+                    <div class="  col-md-4 mt-2 mb-2">
+                        <label for="amount" >Amount</label>
+                        <input type="number"  id="amount" class="mt-2 form-control" formControlName="amount" >
+                    </div>
+                    <div class="col-md-2  mt-2 ">
+                        <button class="btn btn-danger mt-md-4" type="button" (click)="onDelIng(i)">X</button>
+                    </div>
+
+                 </div>
+                 <button class="btn btn-success col-md-4 mt-2 mb-2" (click)="AddnewIngredient()"  type="button">Add Ingredient</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

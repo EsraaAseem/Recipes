@@ -1,0 +1,32 @@
+<div class=" text-center text-sm-center">   
+    <div class="text-center   text-md-start padding:5px">
+        <img [src]="recipe.imgurl" alt="photo" width="200px" height="200px" style="border-radius: 150px;">
+       </div>
+   <div class="row mt-2 mb-2">
+    <div class=" col-md-6  mb-3 ">
+      <h2 class="text-primary ">{{recipe.name}}</h2>
+
+      <ul class=" col-10  text-start me-4 me-lg-2">
+        <ul ngbDropdown  class="text-start">
+            <a class="nav-link me-4 me-lg-2 btn btn-primary  text-light" 
+            id="gfg" role="button" aria-expanded="false"
+                ngbDropdownToggle>Manage</a>
+            <ul ngbDropdownMenu="gfg"  aria-labelledby="navbarDropdown" >
+                    
+              <a style="cursor:pointer;" class="dropdown-item" ngbDropdownItem (click)="EditRecipe()">Edit</a>
+              <a style="cursor: pointer;" class="dropdown-item" ngbDropdownItem (click)="onDelete()">Delete</a>
+              <a style="cursor: pointer;" class="dropdown-item" ngbDropdownItem (click)="AddIngredient()">Add Ingredients</a>
+
+            </ul>
+          </ul>
+    </ul>
+      <h4 class="text-info ">{{recipe.description}}</h4>
+   </div>
+   <div class="col-md-10 row mt-4 ms-3" *ngFor="let ingredient of recipe.ingredients">
+    <a  class="list-group-item text-start"  
+    style="border: 1px rgb(213, 212, 212) solid; border-radius:5px; padding: 10px 20px; cursor: pointer;">
+      {{ingredient.name}} | {{ingredient.amount}} </a>
+  </div>
+   
+   </div>
+</div>

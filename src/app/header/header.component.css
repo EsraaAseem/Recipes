@@ -1,0 +1,8 @@
+a{
+    cursor: pointer;
+}
+.active{
+    background-color: rgb(234, 233, 233);
+    font-weight: bold;
+    border-radius: 5px;
+}
