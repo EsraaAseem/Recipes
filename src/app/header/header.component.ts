@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit ,OnDestroy{
    })
   }
   onStorageDate(){
-  this.storage.StorageDate();
+  this.storage.StorageDate().subscribe(response=>{console.log(response)});;
   }
   onFetchRecipes(){
     this.storage.FetchData().subscribe();
