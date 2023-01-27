@@ -9,7 +9,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent" #collapse="ngbCollapse" [(ngbCollapse)]="gfg">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
           <li class="nav-item">
             <a class="nav-link active " aria-current="page" routerLink="recipe" routerLinkActive="active" 
             [routerLinkActiveOptions]="{exact:true}" *ngIf="isAuth">Recipe</a>
@@ -22,10 +22,10 @@
           </li>
         
         </ul>
-        <ul class=" me-4 me-lg-2 row" *ngIf="isAuth">
-          <a class="nav-link col-md-5" aria-current="page" (click)="onLogOut()">Log Out</a>
-          <ul ngbDropdown class="col-md-7" >
-              <a class="nav-link me-4 me-lg-2" id="gfg" role="button" aria-expanded="false"
+        <ul class=" row m-lg-4 text-lg-end" *ngIf="isAuth">
+          <a class="nav-link col-lg-5 mb-3" aria-current="page" (click)="onLogOut()">Log Out</a>
+          <ul ngbDropdown class="col-lg-4 mb-5" >
+              <a class="nav-link " id="gfg" role="button" aria-expanded="false"
                   ngbDropdownToggle>Dropdown</a>
               <ul ngbDropdownMenu="gfg"  aria-labelledby="navbarDropdown" >
               <a class="dropdown-item" ngbDropdownItem (click)="onStorageDate()">Save Data</a>
@@ -37,5 +37,7 @@
     </div>
   </nav>
 
+
+ 
 
  
